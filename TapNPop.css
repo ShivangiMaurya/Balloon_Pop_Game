@@ -1,0 +1,193 @@
+/* 🌄 Animated Gradient Sky */
+@keyframes gradientBG {
+    0% { background: linear-gradient(to top, #ffcccb, #87CEEB); }
+    50% { background: linear-gradient(to top, #f7b42c, #2193b0); }
+    100% { background: linear-gradient(to top, #ffcccb, #87CEEB); }
+}
+
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: gradientBG 10s infinite alternate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 🎮 Main Game Wrapper */
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background:rgb(166 66 66 / 86%);;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎮 Game Container */
+#balloon-area {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: 3px solid black;
+    margin-top: 20px;
+    overflow: hidden;
+    background: linear-gradient(to top, #fff, #ffcccb);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🎈 Balloon Styling */
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: radial-gradient(circle, red 40%, #cc0000 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    animation: floatUp linear infinite;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+/* 🌀 Balloons move slightly left & right (Wind Effect) */
+@keyframes floatUp {
+    0% { transform: translateY(100%) translateX(0px); }
+    50% { transform: translateY(50%) translateX(10px); }
+    100% { transform: translateY(-150%) translateX(-10px); }
+}
+
+/* 🖱️ Hover Effect (Balloon Wiggle) */
+.balloon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 🎆 Balloon Pop Effect */
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.pop-animation {
+    animation: pop 0.2s ease-out forwards;
+}
+
+/* 🌟 Score Counter */
+#score, #time {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.7);
+}
+
+#score {
+    background: #ff6f61;
+}
+
+#time {
+    background: #28a745;
+}
+
+/* 🎮 Start Game Button */
+#start-game {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: white;
+    background: #b39b1475;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-game:hover {
+    background: #b39b1475;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+}
+
+#start-game:active {
+    transform: scale(0.95);
+}
+
+/* 🎈 Game Title & Info Styling */
+.game-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4757;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s infinite alternate;
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: cursive;
+    padding: 1px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 5px;
+}
+
+/* 📱 Responsive for Mobile */
+@media (max-width: 600px) {
+    .balloon {
+        width: 50px;
+        height: 70px;
+    }
+    #balloon-area {
+        height: 400px;
+    }
+    #score, #time {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+    #start-game {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
