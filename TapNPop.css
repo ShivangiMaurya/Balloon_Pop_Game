@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
+    margin: 1;
 }
 
 /* 🎮 Main Game Wrapper */
@@ -28,7 +28,7 @@ body {
     max-width: 600px;
     padding: 20px;
     background:rgb(166 66 66 / 86%);;
-    border-radius: 15px;
+    border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
