@@ -26,9 +26,9 @@ body {
     justify-content: center;
     width: 100%;
     max-width: 600px;
-    padding: 20px;
+    padding: 25px;
     background:rgb(166 66 66 / 86%);;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
